@@ -10,6 +10,8 @@ import (
 	"runtime"
 
 	"tailscale.com/net/tstun"
+	"tailscale.com/wgengine"
+	"tailscale.com/wgengine/netstack"
 )
 
 func defaultTunName() string {
@@ -40,4 +42,8 @@ func InitTunnel() {
 	// 关联在一起。
 	//
 	// 对于分流流量，clash通过embed dns server + fake ip引流。
+
+	// 2401:
+	// TODO: 可以考虑用 wgengine.NewUserspaceEngine来实现。
+	// 请参考tailscale tsnet逻辑实现。
 }
